@@ -37,7 +37,7 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="section-padding bg-ivory relative"
+      className="section-padding bg-off-white relative"
       data-testid="portfolio-section"
       ref={ref}
     >
@@ -49,12 +49,12 @@ const Portfolio = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">My Work</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-4" data-testid="portfolio-title">
+          <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">My Work</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-4" data-testid="portfolio-title">
             Portfolio
           </h2>
           <div className="luxury-divider" />
-          <p className="text-warm-stone font-light max-w-2xl mx-auto mt-6">
+          <p className="text-gray-600 font-light max-w-2xl mx-auto mt-6">
             A curated collection of my finest work, showcasing the artistry and attention to detail 
             that defines every look I create.
           </p>
@@ -72,7 +72,7 @@ const Portfolio = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`filter-btn ${activeFilter === filter.id ? 'active' : 'text-warm-stone'}`}
+              className={`filter-btn ${activeFilter === filter.id ? 'active' : 'text-gray-500'}`}
               data-testid={`filter-${filter.id}`}
             >
               {filter.label}
@@ -105,8 +105,8 @@ const Portfolio = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity z-10">
-                  <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                    <ZoomIn size={20} className="text-warm-dark" />
+                  <div className="w-12 h-12 rounded-full bg-pink/90 flex items-center justify-center">
+                    <ZoomIn size={20} className="text-white" />
                   </div>
                 </div>
               </motion.div>
@@ -127,7 +127,7 @@ const Portfolio = () => {
             data-testid="lightbox"
           >
             <button
-              className="absolute top-6 right-6 text-white hover:text-gold transition-colors z-10"
+              className="absolute top-6 right-6 text-white hover:text-pink transition-colors z-10"
               onClick={() => setSelectedImage(null)}
               data-testid="lightbox-close"
             >
