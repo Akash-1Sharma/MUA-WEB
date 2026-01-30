@@ -16,31 +16,25 @@ const Hero = () => {
       data-testid="hero-section"
     >
       {/* Cinematic Video Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-90"
           poster="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
           data-testid="hero-video"
         >
           <source
-            src="https://videos.pexels.com/video-files/6724687/6724687-uhd_2732_1440_25fps.mp4"
+            src="https://cdn.pixabay.com/video/2020/05/25/40130-424930032_large.mp4"
             type="video/mp4"
-          />
-          {/* Fallback image if video fails */}
-          <img
-            src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
-            alt="Luxury Makeup"
-            className="w-full h-full object-cover"
           />
         </video>
       </div>
 
       {/* Cinematic Overlay - Darker gradient for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
