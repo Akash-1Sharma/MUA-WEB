@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --gold: #D4AF37;
-  --gold-hover: #B59020;
-  --champagne: #F3E5AB;
-  --ivory: #FFFFF0;
-  --blush: #FCE7F3;
-  --dark: #1C1917;
-  --text-primary: #1C1917;
-  --text-secondary: #57534E;
-  --text-muted: #A8A29E;
+  --pink: #E55B8A;
+  --pink-light: #F073A2;
+  --pink-dark: #D14A79;
+  --black: #000000;
+  --white: #FFFFFF;
+  --off-white: #FFF8FA;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
   font-family: 'Manrope', sans-serif;
   font-weight: 300;
   color: var(--text-primary);
-  background-color: var(--ivory);
+  background-color: var(--off-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -43,6 +43,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .font-serif {
   font-family: 'Playfair Display', serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
 }
 
 .font-accent {
@@ -65,13 +69,13 @@ h1, h2, h3, h4, h5, h6 {
 .glass-dark {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(28, 25, 23, 0.85);
+  background: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gold text gradient */
-.text-gold-gradient {
-  background: linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37);
+/* Pink gradient text */
+.text-pink-gradient {
+  background: linear-gradient(45deg, #E55B8A, #F073A2, #E55B8A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -83,21 +87,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ivory);
+  background: var(--off-white);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--pink);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-hover);
+  background: var(--pink-dark);
 }
 
 /* Selection color */
 ::selection {
-  background: var(--gold);
+  background: var(--pink);
   color: white;
 }
 
@@ -141,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .luxury-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
   margin: 1.5rem auto;
 }
 
@@ -159,25 +163,25 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   :root {
-    --background: 60 100% 97%;
-    --foreground: 20 14% 10%;
-    --card: 60 100% 97%;
-    --card-foreground: 20 14% 10%;
-    --popover: 60 100% 97%;
-    --popover-foreground: 20 14% 10%;
-    --primary: 43 75% 52%;
+    --background: 350 100% 99%;
+    --foreground: 0 0% 0%;
+    --card: 350 100% 99%;
+    --card-foreground: 0 0% 0%;
+    --popover: 350 100% 99%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 340 72% 63%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 326 73% 94%;
-    --secondary-foreground: 20 14% 10%;
-    --muted: 40 33% 96%;
-    --muted-foreground: 20 6% 40%;
-    --accent: 43 75% 52%;
+    --secondary: 340 50% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 340 30% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 340 72% 63%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 43 30% 85%;
-    --input: 43 30% 85%;
-    --ring: 43 75% 52%;
+    --border: 340 30% 85%;
+    --input: 340 30% 85%;
+    --ring: 340 72% 63%;
     --radius: 0.5rem;
   }
 }
