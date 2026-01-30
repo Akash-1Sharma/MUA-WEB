@@ -22,7 +22,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover opacity-80"
           data-testid="hero-video"
         >
           <source
@@ -32,8 +32,8 @@ const Hero = () => {
         </video>
       </div>
 
-      {/* Cinematic Overlay - Darker gradient for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
+      {/* Pink-tinted Cinematic Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-pink/30 via-black/40 to-black/70" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
@@ -42,7 +42,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <span className="text-champagne/90 text-xs md:text-sm tracking-[0.4em] uppercase font-sans mb-4 block drop-shadow-lg">
+          <span className="text-pink-light text-xs md:text-sm tracking-[0.4em] uppercase font-sans mb-4 block drop-shadow-lg">
             Premium Artistry
           </span>
         </motion.div>
@@ -51,18 +51,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-4 drop-shadow-2xl"
-          style={{ textShadow: '2px 4px 20px rgba(0,0,0,0.5)' }}
+          className="font-script text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-4 drop-shadow-2xl"
+          style={{ textShadow: '2px 4px 20px rgba(229,91,138,0.5)' }}
           data-testid="hero-title"
         >
-          PALAK SINGH
+          Palak Singh
         </motion.h1>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="w-24 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mb-6"
+          className="w-24 h-[2px] bg-gradient-to-r from-transparent via-pink to-transparent mb-6"
         />
 
         <motion.p
@@ -81,13 +81,13 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1.1 }}
           className="flex flex-wrap justify-center gap-4 text-white/80 text-xs md:text-sm tracking-[0.15em] uppercase mb-12 drop-shadow-md"
         >
-          <span className="hover:text-gold transition-colors">Bridal</span>
-          <span className="text-gold">✦</span>
-          <span className="hover:text-gold transition-colors">Editorial</span>
-          <span className="text-gold">✦</span>
-          <span className="hover:text-gold transition-colors">Party</span>
-          <span className="text-gold">✦</span>
-          <span className="hover:text-gold transition-colors">Celebrity Looks</span>
+          <span className="hover:text-pink-light transition-colors">Bridal</span>
+          <span className="text-pink-light">✦</span>
+          <span className="hover:text-pink-light transition-colors">Editorial</span>
+          <span className="text-pink-light">✦</span>
+          <span className="hover:text-pink-light transition-colors">Party</span>
+          <span className="text-pink-light">✦</span>
+          <span className="hover:text-pink-light transition-colors">Celebrity Looks</span>
         </motion.div>
 
         <motion.div
@@ -98,14 +98,14 @@ const Hero = () => {
         >
           <button
             onClick={() => scrollToSection("#contact")}
-            className="px-8 py-4 bg-gold text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-gold-hover transition-all duration-300 shadow-lg hover:shadow-gold/30"
+            className="px-8 py-4 bg-pink text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-pink-dark transition-all duration-300 shadow-lg hover:shadow-pink/30"
             data-testid="hero-book-btn"
           >
             Book an Appointment
           </button>
           <button
             onClick={() => scrollToSection("#portfolio")}
-            className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+            className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-white/20 hover:border-pink/50 transition-all duration-300"
             data-testid="hero-portfolio-btn"
           >
             View Portfolio
@@ -122,9 +122,9 @@ const Hero = () => {
         onClick={() => scrollToSection("#about")}
         data-testid="scroll-indicator"
       >
-        <div className="flex flex-col items-center text-white/70 hover:text-gold transition-colors">
+        <div className="flex flex-col items-center text-white/70 hover:text-pink-light transition-colors">
           <span className="text-[10px] tracking-[0.3em] uppercase mb-2 drop-shadow-md">Scroll</span>
-          <div className="w-[1px] h-8 bg-gradient-to-b from-gold to-transparent mb-2" />
+          <div className="w-[1px] h-8 bg-gradient-to-b from-pink to-transparent mb-2" />
           <ChevronDown size={20} className="scroll-indicator drop-shadow-md" />
         </div>
       </motion.div>
