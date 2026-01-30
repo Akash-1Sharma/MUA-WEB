@@ -61,7 +61,7 @@ const Services = () => {
       ref={ref}
     >
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-blush/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-pink/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
@@ -71,12 +71,12 @@ const Services = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">What I Offer</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-4" data-testid="services-title">
+          <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">What I Offer</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-4" data-testid="services-title">
             Luxury Services
           </h2>
           <div className="luxury-divider" />
-          <p className="text-warm-stone font-light max-w-2xl mx-auto mt-6">
+          <p className="text-gray-600 font-light max-w-2xl mx-auto mt-6">
             Experience the art of transformation with our premium makeup and styling services, 
             tailored to bring out your unique beauty.
           </p>
@@ -90,22 +90,22 @@ const Services = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="service-card group p-8 bg-ivory/50 border border-gold/10 hover:bg-white"
+              className="service-card group p-8 bg-off-white border border-pink/10 hover:bg-white"
               data-testid={`service-card-${index}`}
             >
-              <div className="w-14 h-14 flex items-center justify-center border border-gold/30 text-gold mb-6 group-hover:bg-gold group-hover:text-white transition-all duration-500">
+              <div className="w-14 h-14 flex items-center justify-center border border-pink/30 text-pink mb-6 group-hover:bg-pink group-hover:text-white transition-all duration-500">
                 <service.icon size={24} strokeWidth={1.5} />
               </div>
               
-              <h3 className="font-serif text-xl text-warm-dark mb-3">{service.title}</h3>
-              <p className="text-warm-stone text-sm font-light leading-relaxed mb-4">
+              <h3 className="font-serif text-xl text-black mb-3">{service.title}</h3>
+              <p className="text-gray-500 text-sm font-light leading-relaxed mb-4">
                 {service.description}
               </p>
               
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-xs text-warm-muted">
-                    <span className="w-1 h-1 bg-gold rounded-full mr-2" />
+                  <li key={idx} className="flex items-center text-xs text-gray-400">
+                    <span className="w-1 h-1 bg-pink rounded-full mr-2" />
                     {feature}
                   </li>
                 ))}
@@ -113,7 +113,7 @@ const Services = () => {
               
               <button
                 onClick={scrollToContact}
-                className="text-xs tracking-widest uppercase text-gold font-medium hover:text-gold-hover transition-colors"
+                className="text-xs tracking-widest uppercase text-pink font-medium hover:text-pink-dark transition-colors"
                 data-testid={`service-enquire-${index}`}
               >
                 Enquire Now →
