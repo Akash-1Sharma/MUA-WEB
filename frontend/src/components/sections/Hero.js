@@ -23,7 +23,6 @@ const Hero = () => {
           loop
           playsInline
           className="w-full h-full object-cover opacity-90"
-          poster="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
           data-testid="hero-video"
         >
           <source
