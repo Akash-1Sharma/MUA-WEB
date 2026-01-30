@@ -49,7 +49,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <span className="text-gold-light text-xs md:text-sm tracking-[0.4em] uppercase font-sans mb-4 block">
+          <span className="text-champagne/90 text-xs md:text-sm tracking-[0.4em] uppercase font-sans mb-4 block drop-shadow-lg">
             Premium Artistry
           </span>
         </motion.div>
@@ -58,7 +58,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-4"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-4 drop-shadow-2xl"
+          style={{ textShadow: '2px 4px 20px rgba(0,0,0,0.5)' }}
           data-testid="hero-title"
         >
           PALAK SINGH
@@ -68,14 +69,14 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="w-20 h-[1px] bg-gold mb-6"
+          className="w-24 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mb-6"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="text-white/90 text-sm md:text-base tracking-[0.2em] uppercase font-light mb-8"
+          className="text-white/95 text-base md:text-lg tracking-[0.25em] uppercase font-light mb-8 drop-shadow-lg"
           data-testid="hero-subtitle"
         >
           Luxury Makeup Artist
@@ -85,15 +86,15 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="flex flex-wrap justify-center gap-4 text-white/70 text-xs tracking-[0.15em] uppercase mb-12"
+          className="flex flex-wrap justify-center gap-4 text-white/80 text-xs md:text-sm tracking-[0.15em] uppercase mb-12 drop-shadow-md"
         >
-          <span>Bridal</span>
-          <span className="text-gold">|</span>
-          <span>Editorial</span>
-          <span className="text-gold">|</span>
-          <span>Party</span>
-          <span className="text-gold">|</span>
-          <span>Celebrity Looks</span>
+          <span className="hover:text-gold transition-colors">Bridal</span>
+          <span className="text-gold">✦</span>
+          <span className="hover:text-gold transition-colors">Editorial</span>
+          <span className="text-gold">✦</span>
+          <span className="hover:text-gold transition-colors">Party</span>
+          <span className="text-gold">✦</span>
+          <span className="hover:text-gold transition-colors">Celebrity Looks</span>
         </motion.div>
 
         <motion.div
@@ -104,14 +105,14 @@ const Hero = () => {
         >
           <button
             onClick={() => scrollToSection("#contact")}
-            className="btn-gold"
+            className="px-8 py-4 bg-gold text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-gold-hover transition-all duration-300 shadow-lg hover:shadow-gold/30"
             data-testid="hero-book-btn"
           >
             Book an Appointment
           </button>
           <button
             onClick={() => scrollToSection("#portfolio")}
-            className="btn-white"
+            className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-medium text-xs tracking-[0.15em] uppercase hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             data-testid="hero-portfolio-btn"
           >
             View Portfolio
