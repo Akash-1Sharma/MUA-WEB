@@ -5,22 +5,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#D4AF37',
-          hover: '#B59020',
-          light: '#F3E5AB',
+        pink: {
+          DEFAULT: '#E55B8A',
+          light: '#F073A2',
+          dark: '#D14A79',
+          50: '#FFF0F5',
+          100: '#FFE0EB',
+          200: '#FFB8D0',
+          300: '#FF8FB5',
+          400: '#F073A2',
+          500: '#E55B8A',
+          600: '#D14A79',
+          700: '#B33A65',
+          800: '#8C2D4F',
+          900: '#66203A',
         },
-        champagne: '#F3E5AB',
-        ivory: '#FFFFF0',
-        blush: {
-          DEFAULT: '#FCE7F3',
-          hover: '#FBCFE8',
-        },
-        warm: {
-          dark: '#1C1917',
-          stone: '#57534E',
-          muted: '#A8A29E',
-        },
+        black: '#000000',
+        white: '#FFFFFF',
+        'off-white': '#FFF8FA',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -58,6 +60,7 @@ module.exports = {
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
         sans: ['Manrope', 'sans-serif'],
+        script: ['Great Vibes', 'cursive'],
         accent: ['Cormorant Garamond', 'serif'],
       },
       borderRadius: {
