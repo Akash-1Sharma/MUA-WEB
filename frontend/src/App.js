@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`App min-h-screen bg-ivory ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
+    <div className={`App min-h-screen bg-off-white ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
       <Toaster position="top-right" richColors />
       <Navbar />
       <main>
