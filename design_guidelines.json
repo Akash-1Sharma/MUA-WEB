@@ -1,0 +1,150 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Manrope, sans-serif",
+        "accent": "Cormorant Garamond, serif"
+      },
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-medium tracking-tight leading-tight",
+        "h2": "text-4xl md:text-5xl font-normal tracking-tight",
+        "h3": "text-2xl md:text-3xl font-normal",
+        "body_large": "text-lg md:text-xl font-light leading-relaxed",
+        "body_default": "text-base font-light leading-relaxed",
+        "caption": "text-sm font-medium tracking-widest uppercase"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "default": "#D4AF37",
+          "hover": "#B59020",
+          "foreground": "#FFFFFF"
+        },
+        "secondary": {
+          "default": "#FCE7F3",
+          "hover": "#FBCFE8",
+          "foreground": "#1C1917"
+        },
+        "background": {
+          "default": "#FFFFF0",
+          "paper": "#FAFAF9",
+          "dark": "#1C1917"
+        },
+        "text": {
+          "primary": "#1C1917",
+          "secondary": "#57534E",
+          "muted": "#A8A29E"
+        },
+        "accent": {
+          "gold": "#D4AF37",
+          "rose": "#E11D48",
+          "champagne": "#F3E5AB"
+        }
+      },
+      "theme_strategy": "light_mode_enforced_with_warm_undertones"
+    },
+    "visual_enhancers": {
+      "glassmorphism": "backdrop-blur-xl bg-white/30 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)]",
+      "gold_border": "border border-[#D4AF37]/30",
+      "soft_shadow": "shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]",
+      "gradients": {
+        "hero_overlay": "linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4))",
+        "gold_shimmer": "linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37)"
+      }
+    },
+    "layout": {
+      "container": "max-w-7xl mx-auto px-6 md:px-12",
+      "spacing": {
+        "section_padding": "py-24 md:py-32",
+        "element_gap": "gap-8 md:gap-12"
+      },
+      "grid_system": "Mode A: The Tetris Grid (Asymmetric Masonry)"
+    },
+    "motion": {
+      "library": "framer-motion",
+      "settings": {
+        "transition_slow": "duration-700 ease-out",
+        "transition_fast": "duration-300 ease-out",
+        "stagger": 0.1
+      },
+      "types": {
+        "fade_up": "initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}",
+        "parallax": "useScroll + useTransform for vertical movement",
+        "reveal": "mask-image reveal effect for images"
+      }
+    }
+  },
+  "components": {
+    "Navigation": {
+      "path": "/app/frontend/src/components/layout/Navbar.js",
+      "style": "Sticky, glassmorphism, logo centered or left, minimal links. Changes background on scroll.",
+      "features": ["Floating WhatsApp Button", "Book Now CTA"]
+    },
+    "Hero": {
+      "path": "/app/frontend/src/components/sections/Hero.js",
+      "style": "Full screen, video background or high-res slider. Overlay text with 'Quiet Luxury' typography.",
+      "content": "Video/Image + 'Palak Singh' Brand Name + 'Premium Artistry' Tagline"
+    },
+    "About": {
+      "path": "/app/frontend/src/components/sections/About.js",
+      "style": "Asymmetric layout. Image on one side, text overlapping. Signature font for name.",
+      "features": ["Personal Story", "Philosophy", "Signature Image"]
+    },
+    "Services": {
+      "path": "/app/frontend/src/components/sections/Services.js",
+      "style": "Grid of glassmorphic cards. Hover effect: Gold border glow + slight lift.",
+      "items": ["Bridal", "Engagement", "Party", "Editorial", "Airbrush", "Hairstyling"]
+    },
+    "Portfolio": {
+      "path": "/app/frontend/src/components/sections/Portfolio.js",
+      "style": "Masonry Grid (Tetris Mode). Filter tabs (Bridal, Editorial, etc.). Lightbox on click.",
+      "features": ["Category Filters", "Image Zoom", "Lazy Loading"]
+    },
+    "Testimonials": {
+      "path": "/app/frontend/src/components/sections/Testimonials.js",
+      "style": "Horizontal scroll or carousel. Large serif quotes. Elegant typography.",
+      "features": ["Star Rating", "Client Name", "Review Text"]
+    },
+    "Contact": {
+      "path": "/app/frontend/src/components/sections/Contact.js",
+      "style": "Split screen: Form on one side, contact info/map on other. Gold accents.",
+      "features": ["Booking Form", "Map Integration", "Social Links"]
+    },
+    "Footer": {
+      "path": "/app/frontend/src/components/layout/Footer.js",
+      "style": "Dark warm background (#1C1917). Gold text. Massive logo.",
+      "features": ["Quick Links", "Instagram Feed", "Copyright"]
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1760613130027-3959a3eb939c?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "about_portrait": "https://images.unsplash.com/photo-1581173220495-fd09d8b247ff?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "service_bridal": "https://images.unsplash.com/photo-1769500801406-d5abac0429c3?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "service_editorial": "https://images.unsplash.com/photo-1766299231533-27fb998d1a6e?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_gold": "https://images.unsplash.com/photo-1636654680586-0be30d650c79?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_glitter": "https://images.unsplash.com/photo-1545873692-64145c8c42ed?crop=entropy&cs=srgb&fm=jpg&q=85"
+    },
+    "icons": "lucide-react (thin stroke width: 1.5)"
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL DEPENDENCIES: npm install framer-motion lucide-react clsx tailwind-merge @radix-ui/react-slot",
+    "2. SETUP TAILWIND: Update tailwind.config.js with the colors and fonts defined above.",
+    "3. GLOBAL STYLES: Add @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap'); to index.css",
+    "4. COMPONENT BUILD: Build components using the 'hybrid' strategy: Raw HTML/Tailwind for layout, Shadcn for interactivity (Forms, Dialogs).",
+    "5. ANIMATION: Apply 'fade_up' animation to all major sections. Use 'parallax' for the Hero background.",
+    "6. FORMS: Ensure the Booking Form connects to the FastAPI backend (mock the endpoint if needed).",
+    "7. RESPONSIVENESS: Mobile-first. Ensure padding is p-6 on mobile and p-24 on desktop.",
+    "8. IMAGES: Use the provided Unsplash URLs. Do not use placeholders."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for backgrounds, use solid warm neutrals or subtle textures.",
+    "Ensure text contrast is high (WCAG AA).",
+    "Use 'Playfair Display' for all Headings (h1-h3).",
+    "Use 'Manrope' for all Body text.",
+    "Buttons should be 'pill' shaped or sharp rectangles with gold borders.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}
