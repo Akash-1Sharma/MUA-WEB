@@ -103,7 +103,7 @@ const Testimonials = () => {
           <Star
             key={star}
             size={interactive ? 24 : 18}
-            className={`${star <= rating ? 'star-filled fill-gold' : 'star-empty'} ${interactive ? 'cursor-pointer hover:scale-110 transition-transform' : ''}`}
+            className={`${star <= rating ? 'star-filled fill-pink' : 'star-empty'} ${interactive ? 'cursor-pointer hover:scale-110 transition-transform' : ''}`}
             strokeWidth={1.5}
             onClick={interactive ? () => onRate(star) : undefined}
           />
@@ -115,12 +115,12 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="section-padding bg-blush/30 relative overflow-hidden"
+      className="section-padding bg-pink/10 relative overflow-hidden"
       data-testid="testimonials-section"
       ref={ref}
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-pink/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/50 rounded-full blur-3xl" />
       
       <div className="max-w-6xl mx-auto relative">
@@ -131,8 +131,8 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">Client Love</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-4" data-testid="testimonials-title">
+          <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">Client Love</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-4" data-testid="testimonials-title">
             Testimonials
           </h2>
           <div className="luxury-divider" />
@@ -146,20 +146,20 @@ const Testimonials = () => {
           className="relative"
         >
           <div className="testimonial-card max-w-3xl mx-auto p-8 md:p-12 text-center" data-testid="testimonial-card">
-            <Quote className="w-12 h-12 text-gold/30 mx-auto mb-6" />
+            <Quote className="w-12 h-12 text-pink/30 mx-auto mb-6" />
             
             <div className="flex justify-center mb-6">
               {renderStars(testimonials[currentIndex]?.rating || 5)}
             </div>
             
-            <p className="font-serif text-lg md:text-xl text-warm-dark leading-relaxed italic mb-8">
+            <p className="font-serif text-lg md:text-xl text-black leading-relaxed italic mb-8">
               "{testimonials[currentIndex]?.review}"
             </p>
             
             <div>
-              <p className="font-serif text-xl text-warm-dark">{testimonials[currentIndex]?.client_name}</p>
+              <p className="font-serif text-xl text-black">{testimonials[currentIndex]?.client_name}</p>
               {testimonials[currentIndex]?.event_type && (
-                <span className="text-xs tracking-widest uppercase text-gold">{testimonials[currentIndex]?.event_type}</span>
+                <span className="text-xs tracking-widest uppercase text-pink">{testimonials[currentIndex]?.event_type}</span>
               )}
             </div>
           </div>
@@ -168,7 +168,7 @@ const Testimonials = () => {
           <div className="flex justify-center items-center gap-6 mt-8">
             <button
               onClick={prevTestimonial}
-              className="w-12 h-12 flex items-center justify-center border border-gold/30 text-gold hover:bg-gold hover:text-white transition-all"
+              className="w-12 h-12 flex items-center justify-center border border-pink/30 text-pink hover:bg-pink hover:text-white transition-all"
               data-testid="testimonial-prev"
             >
               <ChevronLeft size={20} />
@@ -179,7 +179,7 @@ const Testimonials = () => {
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-gold w-6' : 'bg-gold/30'}`}
+                  className={`w-2 h-2 rounded-full transition-all ${idx === currentIndex ? 'bg-pink w-6' : 'bg-pink/30'}`}
                   data-testid={`testimonial-dot-${idx}`}
                 />
               ))}
@@ -187,7 +187,7 @@ const Testimonials = () => {
             
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 flex items-center justify-center border border-gold/30 text-gold hover:bg-gold hover:text-white transition-all"
+              className="w-12 h-12 flex items-center justify-center border border-pink/30 text-pink hover:bg-pink hover:text-white transition-all"
               data-testid="testimonial-next"
             >
               <ChevronRight size={20} />
@@ -204,7 +204,7 @@ const Testimonials = () => {
         >
           <button
             onClick={() => setShowForm(!showForm)}
-            className="btn-outline-gold"
+            className="btn-outline-pink"
             data-testid="submit-review-btn"
           >
             {showForm ? 'Close Form' : 'Share Your Experience'}
@@ -217,7 +217,7 @@ const Testimonials = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="max-w-xl mx-auto mt-8 p-8 bg-white border border-gold/20"
+            className="max-w-xl mx-auto mt-8 p-8 bg-white border border-pink/20"
             onSubmit={handleSubmit}
             data-testid="review-form"
           >
@@ -225,7 +225,7 @@ const Testimonials = () => {
             
             <div className="space-y-4">
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Your Name *</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Your Name *</label>
                 <input
                   type="text"
                   value={formData.client_name}
@@ -237,7 +237,7 @@ const Testimonials = () => {
               </div>
               
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Event Type</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Event Type</label>
                 <select
                   value={formData.event_type}
                   onChange={(e) => setFormData({...formData, event_type: e.target.value})}
@@ -254,12 +254,12 @@ const Testimonials = () => {
               </div>
               
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Rating *</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Rating *</label>
                 {renderStars(formData.rating, true, (rating) => setFormData({...formData, rating}))}
               </div>
               
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Your Review *</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Your Review *</label>
                 <textarea
                   value={formData.review}
                   onChange={(e) => setFormData({...formData, review: e.target.value})}
@@ -272,7 +272,7 @@ const Testimonials = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-gold w-full"
+                className="btn-pink w-full"
                 data-testid="review-submit-btn"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Review'}
