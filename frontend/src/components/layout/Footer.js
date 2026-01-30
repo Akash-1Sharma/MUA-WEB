@@ -129,6 +129,9 @@ const Footer = () => {
           <p className="text-white/40 text-xs flex items-center gap-1">
             Designed for <span className="text-gold">Luxury Beauty Experience</span>
           </p>
+          <p className="text-white/30 text-[10px] tracking-wide">
+            Made with Emergent
+          </p>
         </div>
       </div>
 
