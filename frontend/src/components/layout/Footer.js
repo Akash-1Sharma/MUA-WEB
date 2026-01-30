@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Instagram, Facebook, Youtube, Mail, Phone, Heart } from "lucide-react";
+import { Instagram, Facebook, Youtube, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -27,15 +26,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-warm-dark text-white" data-testid="footer">
+    <footer className="bg-black text-white" data-testid="footer">
       <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="font-serif text-3xl md:text-4xl mb-2" data-testid="footer-logo">
-              PALAK SINGH
+            <h3 className="font-script text-4xl md:text-5xl mb-2 text-pink" data-testid="footer-logo">
+              Palak Singh
             </h3>
-            <span className="text-gold text-xs tracking-[0.3em] uppercase">Luxury Makeup Artist</span>
+            <span className="text-pink-light text-xs tracking-[0.3em] uppercase">Luxury Makeup Artist</span>
             <p className="text-white/60 font-light mt-6 max-w-md leading-relaxed">
               Transforming faces and celebrating beauty since 2014. Every look I create is a masterpiece, 
               designed to make you feel confident, beautiful, and truly yourself.
@@ -49,7 +48,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-white/20 text-white/70 hover:border-gold hover:text-gold transition-all"
+                  className="w-10 h-10 flex items-center justify-center border border-pink/30 text-white/70 hover:border-pink hover:text-pink transition-all"
                   aria-label={social.label}
                   data-testid={`footer-social-${social.label.toLowerCase()}`}
                 >
@@ -71,7 +70,7 @@ const Footer = () => {
                       e.preventDefault();
                       scrollToSection(link.href);
                     }}
-                    className="text-white/60 text-sm font-light hover:text-gold transition-colors"
+                    className="text-white/60 text-sm font-light hover:text-pink transition-colors"
                     data-testid={`footer-link-${link.name.toLowerCase()}`}
                   >
                     {link.name}
@@ -86,8 +85,8 @@ const Footer = () => {
             <h4 className="font-serif text-lg mb-6">Get In Touch</h4>
             <div className="space-y-4">
               <a
-                href="tel:+919876543210"
-                className="flex items-center gap-3 text-white/60 text-sm font-light hover:text-gold transition-colors"
+                href="tel:+919142871157"
+                className="flex items-center gap-3 text-white/60 text-sm font-light hover:text-pink transition-colors"
                 data-testid="footer-phone"
               >
                 <Phone size={16} strokeWidth={1.5} />
@@ -95,7 +94,7 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:hello@palaksingh.com"
-                className="flex items-center gap-3 text-white/60 text-sm font-light hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-white/60 text-sm font-light hover:text-pink transition-colors"
                 data-testid="footer-email"
               >
                 <Mail size={16} strokeWidth={1.5} />
@@ -110,7 +109,7 @@ const Footer = () => {
                 e.preventDefault();
                 scrollToSection("#contact");
               }}
-              className="inline-block mt-8 px-6 py-3 bg-gold text-white text-xs tracking-widest uppercase font-medium hover:bg-gold-hover transition-colors"
+              className="inline-block mt-8 px-6 py-3 bg-pink text-white text-xs tracking-widest uppercase font-medium hover:bg-pink-dark transition-colors"
               data-testid="footer-book-btn"
             >
               Book Now
@@ -127,7 +126,7 @@ const Footer = () => {
             © {currentYear} Palak Singh. All rights reserved.
           </p>
           <p className="text-white/40 text-xs flex items-center gap-1">
-            Designed for <span className="text-gold">Luxury Beauty Experience</span>
+            Designed for <span className="text-pink">Luxury Beauty Experience</span>
           </p>
           <p className="text-white/30 text-[10px] tracking-wide">
             Made with Emergent
@@ -136,7 +135,7 @@ const Footer = () => {
       </div>
 
       {/* Decorative bottom bar */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
+      <div className="h-1 bg-gradient-to-r from-transparent via-pink to-transparent" />
     </footer>
   );
 };
