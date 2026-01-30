@@ -39,7 +39,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "navbar-scrolled py-3" : "bg-transparent py-5"
+          isScrolled ? "navbar-scrolled py-3" : "bg-black/80 backdrop-blur-sm py-4"
         }`}
         data-testid="navbar"
       >
@@ -54,10 +54,10 @@ const Navbar = () => {
             className="flex flex-col items-start"
             data-testid="navbar-logo"
           >
-            <span className={`font-serif text-xl md:text-2xl tracking-wide ${isScrolled ? 'text-warm-dark' : 'text-white'}`}>
+            <span className={`font-serif text-xl md:text-2xl tracking-wide ${isScrolled ? 'text-black' : 'text-white'}`}>
               PALAK SINGH
             </span>
-            <span className={`text-[10px] tracking-[0.3em] uppercase ${isScrolled ? 'text-gold' : 'text-gold-light'}`}>
+            <span className={`text-[10px] tracking-[0.3em] uppercase ${isScrolled ? 'text-pink' : 'text-pink-light'}`}>
               Luxury Makeup Artist
             </span>
           </a>
@@ -72,8 +72,8 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className={`text-xs tracking-widest uppercase font-medium transition-colors hover:text-gold ${
-                  isScrolled ? "text-warm-dark" : "text-white"
+                className={`text-xs tracking-widest uppercase font-medium transition-colors hover:text-pink ${
+                  isScrolled ? "text-black" : "text-white"
                 }`}
                 data-testid={`nav-link-${link.name.toLowerCase()}`}
               >
@@ -86,7 +86,7 @@ const Navbar = () => {
                 e.preventDefault();
                 scrollToSection("#contact");
               }}
-              className="btn-gold"
+              className="btn-pink"
               data-testid="nav-book-now"
             >
               Book Now
@@ -96,7 +96,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 ${isScrolled ? "text-warm-dark" : "text-white"}`}
+            className={`lg:hidden p-2 ${isScrolled ? "text-black" : "text-white"}`}
             data-testid="mobile-menu-toggle"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,7 +112,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-ivory pt-24 lg:hidden"
+            className="fixed inset-0 z-40 bg-off-white pt-24 lg:hidden"
             data-testid="mobile-menu"
           >
             <div className="flex flex-col items-center gap-6 py-8">
@@ -127,7 +127,7 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-lg tracking-widest uppercase font-serif text-warm-dark hover:text-gold transition-colors"
+                  className="text-lg tracking-widest uppercase font-serif text-black hover:text-pink transition-colors"
                   data-testid={`mobile-nav-link-${link.name.toLowerCase()}`}
                 >
                   {link.name}
@@ -142,7 +142,7 @@ const Navbar = () => {
                   e.preventDefault();
                   scrollToSection("#contact");
                 }}
-                className="btn-gold mt-4"
+                className="btn-pink mt-4"
                 data-testid="mobile-nav-book-now"
               >
                 Book Now
