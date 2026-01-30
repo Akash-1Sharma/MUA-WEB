@@ -17,12 +17,12 @@ const About = () => {
   return (
     <section
       id="about"
-      className="section-padding bg-ivory relative overflow-hidden"
+      className="section-padding bg-off-white relative overflow-hidden"
       data-testid="about-section"
       ref={ref}
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blush/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-pink/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -41,7 +41,7 @@ const About = () => {
                 data-testid="about-image"
               />
               {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-gold/30 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-pink/30 -z-10" />
             </div>
             
             {/* Trust badge */}
@@ -49,12 +49,12 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -right-6 md:bottom-8 md:right-8 bg-white shadow-xl p-4 md:p-6"
+              className="absolute -bottom-6 -right-6 md:bottom-8 md:right-8 bg-black text-white shadow-xl p-4 md:p-6"
               data-testid="trust-badge"
             >
               <div className="text-center">
-                <span className="text-3xl md:text-4xl font-serif text-gold">500+</span>
-                <p className="text-xs tracking-widest uppercase text-warm-stone mt-1">Happy Clients</p>
+                <span className="text-3xl md:text-4xl font-serif text-pink">500+</span>
+                <p className="text-xs tracking-widest uppercase text-white/70 mt-1">Happy Clients</p>
               </div>
             </motion.div>
           </motion.div>
@@ -65,13 +65,13 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">About Me</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-6" data-testid="about-title">
+            <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">About Me</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-6" data-testid="about-title">
               Where Artistry Meets Elegance
             </h2>
-            <div className="w-16 h-[2px] bg-gold mb-8" />
+            <div className="w-16 h-[2px] bg-pink mb-8" />
             
-            <div className="space-y-6 text-warm-stone font-light leading-relaxed">
+            <div className="space-y-6 text-gray-600 font-light leading-relaxed">
               <p>
                 With over a decade of experience in the beauty industry, I have dedicated my career to 
                 transforming faces and celebrating the unique beauty of every individual. My journey 
@@ -92,8 +92,8 @@ const About = () => {
 
             {/* Signature */}
             <div className="mt-8">
-              <p className="font-accent text-3xl italic text-gold">Palak Singh</p>
-              <span className="text-xs tracking-widest uppercase text-warm-muted">Celebrity Makeup Artist</span>
+              <p className="font-script text-4xl text-pink">Palak Singh</p>
+              <span className="text-xs tracking-widest uppercase text-gray-400">Celebrity Makeup Artist</span>
             </div>
           </motion.div>
         </div>
@@ -109,11 +109,11 @@ const About = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-white/50 border border-gold/10 hover:border-gold/30 transition-colors"
+              className="text-center p-6 bg-white border border-pink/10 hover:border-pink/30 transition-colors"
             >
-              <stat.icon className="w-8 h-8 text-gold mx-auto mb-3" strokeWidth={1.5} />
-              <span className="block font-serif text-3xl text-warm-dark">{stat.number}</span>
-              <span className="text-xs tracking-widest uppercase text-warm-muted">{stat.label}</span>
+              <stat.icon className="w-8 h-8 text-pink mx-auto mb-3" strokeWidth={1.5} />
+              <span className="block font-serif text-3xl text-black">{stat.number}</span>
+              <span className="text-xs tracking-widest uppercase text-gray-400">{stat.label}</span>
             </div>
           ))}
         </motion.div>
