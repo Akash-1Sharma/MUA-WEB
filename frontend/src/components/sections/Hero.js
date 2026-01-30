@@ -125,13 +125,14 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
         onClick={() => scrollToSection("#about")}
         data-testid="scroll-indicator"
       >
-        <div className="flex flex-col items-center text-white/70">
-          <span className="text-[10px] tracking-[0.3em] uppercase mb-2">Scroll</span>
-          <ChevronDown size={20} className="scroll-indicator" />
+        <div className="flex flex-col items-center text-white/70 hover:text-gold transition-colors">
+          <span className="text-[10px] tracking-[0.3em] uppercase mb-2 drop-shadow-md">Scroll</span>
+          <div className="w-[1px] h-8 bg-gradient-to-b from-gold to-transparent mb-2" />
+          <ChevronDown size={20} className="scroll-indicator drop-shadow-md" />
         </div>
       </motion.div>
     </section>
