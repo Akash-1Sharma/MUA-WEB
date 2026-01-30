@@ -82,12 +82,12 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="section-padding bg-ivory relative overflow-hidden"
+      className="section-padding bg-off-white relative overflow-hidden"
       data-testid="contact-section"
       ref={ref}
     >
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blush/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-pink/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
@@ -97,12 +97,12 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">Get In Touch</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-4" data-testid="contact-title">
+          <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">Get In Touch</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-4" data-testid="contact-title">
             Book Your Appointment
           </h2>
           <div className="luxury-divider" />
-          <p className="text-warm-stone font-light max-w-2xl mx-auto mt-6">
+          <p className="text-gray-600 font-light max-w-2xl mx-auto mt-6">
             Ready to experience luxury beauty? Fill out the form below and let's create 
             your perfect look together.
           </p>
@@ -116,7 +116,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="bg-warm-dark p-8 md:p-10 h-full">
+            <div className="bg-black p-8 md:p-10 h-full">
               <h3 className="font-serif text-2xl text-white mb-8">Contact Information</h3>
               
               <div className="space-y-6">
@@ -129,12 +129,12 @@ const Contact = () => {
                     className="flex items-start gap-4 group"
                     data-testid={`contact-info-${info.label.toLowerCase()}`}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center border border-gold/30 text-gold group-hover:bg-gold group-hover:text-white transition-all">
+                    <div className="w-10 h-10 flex items-center justify-center border border-pink/30 text-pink group-hover:bg-pink group-hover:text-white transition-all">
                       <info.icon size={18} strokeWidth={1.5} />
                     </div>
                     <div>
                       <span className="text-xs tracking-widest uppercase text-white/50 block">{info.label}</span>
-                      <span className="text-white font-light group-hover:text-gold transition-colors">{info.value}</span>
+                      <span className="text-white font-light group-hover:text-pink transition-colors">{info.value}</span>
                     </div>
                   </a>
                 ))}
@@ -145,7 +145,7 @@ const Contact = () => {
                 href="https://wa.me/919142871157"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 flex items-center justify-center gap-3 w-full py-4 bg-[#25D366] text-white font-medium text-sm tracking-wide hover:bg-[#20BD5A] transition-colors"
+                className="mt-10 flex items-center justify-center gap-3 w-full py-4 bg-pink text-white font-medium text-sm tracking-wide hover:bg-pink-dark transition-colors"
                 data-testid="whatsapp-contact-btn"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -156,7 +156,7 @@ const Contact = () => {
 
               {/* Decorative Quote */}
               <div className="mt-10 pt-8 border-t border-white/10">
-                <p className="font-accent text-white/70 text-lg italic">
+                <p className="font-script text-2xl text-white/70">
                   "Every face tells a story. Let me help you tell yours beautifully."
                 </p>
               </div>
@@ -173,7 +173,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6" data-testid="booking-form">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Name *</label>
+                  <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Name *</label>
                   <input
                     type="text"
                     value={formData.name}
@@ -184,7 +184,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Phone *</label>
+                  <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Phone *</label>
                   <input
                     type="tel"
                     value={formData.phone}
@@ -197,7 +197,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Email *</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Email *</label>
                 <input
                   type="email"
                   value={formData.email}
@@ -210,7 +210,7 @@ const Contact = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Event Type *</label>
+                  <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Event Type *</label>
                   <select
                     value={formData.event_type}
                     onChange={(e) => setFormData({...formData, event_type: e.target.value})}
@@ -224,7 +224,7 @@ const Contact = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Event Date *</label>
+                  <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Event Date *</label>
                   <Popover>
                     <PopoverTrigger asChild>
                       <button
@@ -232,8 +232,8 @@ const Contact = () => {
                         className="form-input w-full text-left flex items-center justify-between"
                         data-testid="booking-date-trigger"
                       >
-                        {date ? format(date, "PPP") : <span className="text-warm-muted">Select date</span>}
-                        <CalendarIcon className="w-4 h-4 text-warm-muted" />
+                        {date ? format(date, "PPP") : <span className="text-gray-400">Select date</span>}
+                        <CalendarIcon className="w-4 h-4 text-gray-400" />
                       </button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0 bg-white" align="start">
@@ -251,7 +251,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">City *</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">City *</label>
                 <input
                   type="text"
                   value={formData.city}
@@ -263,7 +263,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="text-xs tracking-widest uppercase text-warm-stone mb-2 block">Message</label>
+                <label className="text-xs tracking-widest uppercase text-gray-500 mb-2 block">Message</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -276,7 +276,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-gold w-full flex items-center justify-center gap-2"
+                className="btn-pink w-full flex items-center justify-center gap-2"
                 data-testid="booking-submit-btn"
               >
                 {isSubmitting ? (
@@ -289,7 +289,7 @@ const Contact = () => {
                 )}
               </button>
 
-              <p className="text-xs text-warm-muted text-center">
+              <p className="text-xs text-gray-400 text-center">
                 By submitting this form, you agree to be contacted regarding your enquiry. 
                 We typically respond within 24 hours.
               </p>
