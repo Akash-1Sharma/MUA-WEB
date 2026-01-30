@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp, MessageCircle } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const FloatingButtons = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -27,7 +27,7 @@ const FloatingButtons = () => {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring" }}
-        className="fixed bottom-6 left-6 z-50 w-14 h-14 flex items-center justify-center bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all"
+        className="fixed bottom-6 left-6 z-50 w-14 h-14 flex items-center justify-center bg-pink text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 hover:bg-pink-dark transition-all"
         aria-label="Chat on WhatsApp"
         data-testid="floating-whatsapp"
       >
@@ -44,7 +44,7 @@ const FloatingButtons = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-gold text-white shadow-lg hover:bg-gold-hover hover:shadow-xl transition-all"
+            className="fixed bottom-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-black text-white shadow-lg hover:bg-pink hover:shadow-xl transition-all"
             aria-label="Scroll to top"
             data-testid="scroll-to-top"
           >
