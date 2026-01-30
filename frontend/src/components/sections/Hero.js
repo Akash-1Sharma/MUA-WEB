@@ -15,17 +15,32 @@ const Hero = () => {
       className="relative h-screen w-full overflow-hidden"
       data-testid="hero-section"
     >
-      {/* Video Background - Using placeholder image for now */}
+      {/* Cinematic Video Background */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
-          alt="Luxury Makeup"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+          poster="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
+          data-testid="hero-video"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/6724687/6724687-uhd_2732_1440_25fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback image if video fails */}
+          <img
+            src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80"
+            alt="Luxury Makeup"
+            className="w-full h-full object-cover"
+          />
+        </video>
       </div>
 
-      {/* Overlay */}
-      <div className="hero-overlay" />
+      {/* Cinematic Overlay - Darker gradient for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
