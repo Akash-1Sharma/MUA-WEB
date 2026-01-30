@@ -35,9 +35,9 @@ const About = () => {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
+                src="https://images.unsplash.com/photo-1606158562001-5b5a8029a80b?w=800&q=80"
                 alt="Palak Singh - Luxury Makeup Artist"
-                className="w-full h-[500px] md:h-[600px] object-cover"
+                className="w-full h-[500px] md:h-[600px] object-cover object-top"
                 data-testid="about-image"
               />
               {/* Decorative frame */}

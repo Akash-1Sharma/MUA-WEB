@@ -3,18 +3,18 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 
 const portfolioImages = [
-  { id: 1, category: "bridal", src: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80", alt: "Bridal Makeup Look" },
-  { id: 2, category: "editorial", src: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80", alt: "Editorial Beauty" },
-  { id: 3, category: "party", src: "https://images.unsplash.com/photo-1588268618369-e1c24b80f688?w=800&q=80", alt: "Party Glam" },
-  { id: 4, category: "bridal", src: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80", alt: "Traditional Bridal" },
-  { id: 5, category: "editorial", src: "https://images.unsplash.com/photo-1503236823255-94609f598e71?w=800&q=80", alt: "High Fashion" },
-  { id: 6, category: "party", src: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&q=80", alt: "Evening Glamour" },
-  { id: 7, category: "bridal", src: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80", alt: "Elegant Bridal" },
-  { id: 8, category: "editorial", src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80", alt: "Creative Editorial" },
-  { id: 9, category: "party", src: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80", alt: "Celebration Look" },
-  { id: 10, category: "bridal", src: "https://images.unsplash.com/photo-1608528577891-eb055944f2e7?w=800&q=80", alt: "Modern Bridal" },
-  { id: 11, category: "editorial", src: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80", alt: "Magazine Cover" },
-  { id: 12, category: "party", src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80", alt: "Red Carpet Ready" },
+  { id: 1, category: "bridal", src: "https://images.unsplash.com/photo-1641699862936-be9f49b1c38d?w=800&q=80", alt: "Indian Bridal Makeup" },
+  { id: 2, category: "editorial", src: "https://images.unsplash.com/photo-1581132285926-a4c91a76ef14?w=800&q=80", alt: "Editorial Beauty" },
+  { id: 3, category: "party", src: "https://images.unsplash.com/photo-1736849816780-6ca0730061a6?w=800&q=80", alt: "Party Glam" },
+  { id: 4, category: "bridal", src: "https://images.unsplash.com/photo-1760461805697-7aff3e93c5d9?w=800&q=80", alt: "Traditional Bridal" },
+  { id: 5, category: "editorial", src: "https://images.unsplash.com/photo-1606158562001-5b5a8029a80b?w=800&q=80", alt: "High Fashion" },
+  { id: 6, category: "party", src: "https://images.unsplash.com/photo-1656568757581-5beb95f29291?w=800&q=80", alt: "Evening Glamour" },
+  { id: 7, category: "bridal", src: "https://images.unsplash.com/photo-1684868264466-4c4fcf0a5b37?w=800&q=80", alt: "Elegant Bridal" },
+  { id: 8, category: "editorial", src: "https://images.unsplash.com/photo-1617807727464-b0f779ec68c1?w=800&q=80", alt: "Creative Editorial" },
+  { id: 9, category: "party", src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80", alt: "Celebration Look" },
+  { id: 10, category: "bridal", src: "https://images.unsplash.com/photo-1760461804494-c39017a52e6b?w=800&q=80", alt: "Modern Bridal" },
+  { id: 11, category: "editorial", src: "https://images.unsplash.com/photo-1751619194419-800a16b539ef?w=800&q=80", alt: "Magazine Cover" },
+  { id: 12, category: "party", src: "https://images.pexels.com/photos/3448813/pexels-photo-3448813.jpeg?w=800", alt: "Red Carpet Ready" },
 ];
 
 const filters = [
