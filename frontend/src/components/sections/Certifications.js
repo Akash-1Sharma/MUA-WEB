@@ -52,12 +52,12 @@ const Certifications = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-gold text-xs tracking-[0.3em] uppercase font-medium">Credentials</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-warm-dark mt-4 mb-4" data-testid="certifications-title">
+          <span className="text-pink text-xs tracking-[0.3em] uppercase font-medium">Credentials</span>
+          <h2 className="font-serif text-4xl md:text-5xl text-black mt-4 mb-4" data-testid="certifications-title">
             Certifications & Training
           </h2>
           <div className="luxury-divider" />
-          <p className="text-warm-stone font-light max-w-2xl mx-auto mt-6">
+          <p className="text-gray-600 font-light max-w-2xl mx-auto mt-6">
             Continuously investing in professional development to bring you the latest techniques 
             and highest standards in makeup artistry.
           </p>
@@ -71,18 +71,18 @@ const Certifications = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex gap-6 p-8 bg-ivory/50 border border-gold/10 hover:border-gold/30 transition-all"
+              className="group flex gap-6 p-8 bg-off-white border border-pink/10 hover:border-pink/30 transition-all"
               data-testid={`certification-${index}`}
             >
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 flex items-center justify-center bg-gold/10 text-gold group-hover:bg-gold group-hover:text-white transition-all">
+                <div className="w-16 h-16 flex items-center justify-center bg-pink/10 text-pink group-hover:bg-pink group-hover:text-white transition-all">
                   <cert.icon size={28} strokeWidth={1.5} />
                 </div>
               </div>
               <div>
-                <h3 className="font-serif text-xl text-warm-dark mb-1">{cert.title}</h3>
-                <span className="text-xs tracking-widest uppercase text-gold">{cert.subtitle}</span>
-                <p className="text-warm-stone text-sm font-light mt-3 leading-relaxed">
+                <h3 className="font-serif text-xl text-black mb-1">{cert.title}</h3>
+                <span className="text-xs tracking-widest uppercase text-pink">{cert.subtitle}</span>
+                <p className="text-gray-500 text-sm font-light mt-3 leading-relaxed">
                   {cert.description}
                 </p>
               </div>
@@ -97,7 +97,7 @@ const Certifications = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <span className="text-warm-muted text-xs tracking-[0.3em] uppercase block mb-8">Brands I Work With</span>
+          <span className="text-gray-400 text-xs tracking-[0.3em] uppercase block mb-8">Brands I Work With</span>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {brands.map((brand, index) => (
               <motion.span
@@ -105,7 +105,7 @@ const Certifications = () => {
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.05 }}
-                className="text-warm-stone/60 font-serif text-lg md:text-xl hover:text-gold transition-colors cursor-default"
+                className="text-gray-400 font-serif text-lg md:text-xl hover:text-pink transition-colors cursor-default"
               >
                 {brand}
               </motion.span>
@@ -118,12 +118,12 @@ const Certifications = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center p-8 md:p-12 bg-warm-dark text-white"
+          className="mt-16 text-center p-8 md:p-12 bg-black text-white"
         >
           <p className="font-serif text-xl md:text-2xl italic mb-4">
             "Quality products and continuous learning are the foundations of my artistry"
           </p>
-          <span className="text-gold text-xs tracking-[0.3em] uppercase">— Palak Singh</span>
+          <span className="text-pink text-xs tracking-[0.3em] uppercase">— Palak Singh</span>
         </motion.div>
       </div>
     </section>
