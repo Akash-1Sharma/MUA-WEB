@@ -91,7 +91,7 @@ const Footer = () => {
                 data-testid="footer-phone"
               >
                 <Phone size={16} strokeWidth={1.5} />
-                +91 98765 43210
+                +91 91428 71157
               </a>
               <a
                 href="mailto:hello@palaksingh.com"

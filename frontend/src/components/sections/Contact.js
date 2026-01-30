@@ -11,7 +11,7 @@ import { CalendarIcon } from "lucide-react";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
+  { icon: Phone, label: "Phone", value: "+91 91428 71157", href: "tel:+919142871157" },
   { icon: Mail, label: "Email", value: "hello@palaksingh.com", href: "mailto:hello@palaksingh.com" },
   { icon: Instagram, label: "Instagram", value: "@palaksinghmakeup", href: "https://instagram.com/palaksinghmakeup" },
   { icon: MapPin, label: "Location", value: "Mumbai, India", href: "#" },
@@ -142,7 +142,7 @@ const Contact = () => {
 
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919142871157"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-10 flex items-center justify-center gap-3 w-full py-4 bg-[#25D366] text-white font-medium text-sm tracking-wide hover:bg-[#20BD5A] transition-colors"
