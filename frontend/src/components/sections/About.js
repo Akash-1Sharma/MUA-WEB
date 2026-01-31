@@ -17,10 +17,18 @@ const About = () => {
   return (
     <section
       id="about"
-      className="section-padding bg-off-white relative overflow-hidden"
+      className="section-padding relative overflow-hidden"
       data-testid="about-section"
       ref={ref}
+      style={{
+        backgroundImage: `url('https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/txuguayx_Pink%20leopard%20texture%20background.jpeg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
+      {/* Overlay for opacity control */}
+      <div className="absolute inset-0 bg-white/85" />
+      
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-pink/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
