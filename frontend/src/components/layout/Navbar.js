@@ -55,7 +55,7 @@ const Navbar = () => {
             data-testid="navbar-logo"
           >
             <span className={`font-serif text-xl md:text-2xl tracking-wide ${isScrolled ? 'text-black' : 'text-white'}`}>
-              PALAK SINGH
+              PALAK SIN
             </span>
             <span className={`text-[10px] tracking-[0.3em] uppercase ${isScrolled ? 'text-pink' : 'text-pink-light'}`}>
               Luxury Makeup Artist
