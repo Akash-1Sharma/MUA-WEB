@@ -1,7 +1,34 @@
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Volume2, VolumeX } from "lucide-react";
 
 const Hero = () => {
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Force video to load and play
+      video.load();
+      video.play().catch(err => {
+        console.log("Autoplay blocked, video will play on interaction");
+      });
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handleVideoLoaded = () => {
+    setIsLoaded(true);
+  };
+
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
@@ -12,27 +39,48 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden"
+      className="relative h-screen w-full overflow-hidden bg-black"
       data-testid="hero-section"
     >
-      {/* Cinematic Video Background with Audio */}
-      <div className="absolute inset-0 bg-black">
-        <video
-          autoPlay
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          data-testid="hero-video"
-        >
-          <source
-            src="https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/kna3dsec_Palak%20Intro%2002.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+      {/* Video Background */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onLoadedData={handleVideoLoaded}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        data-testid="hero-video"
+      >
+        <source
+          src="https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/kna3dsec_Palak%20Intro%2002.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* Subtle Overlay - Very light for video visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+      {/* Loading Placeholder */}
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black">
+          <div className="w-12 h-12 border-2 border-pink border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+
+      {/* Subtle Overlay for button visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50" />
+
+      {/* Sound Toggle Button */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        onClick={toggleMute}
+        className="absolute top-24 right-6 z-20 w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 text-white hover:bg-pink hover:border-pink transition-all"
+        data-testid="sound-toggle"
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </motion.button>
 
       {/* Content - Only Buttons */}
       <div className="relative z-10 h-full flex flex-col items-center justify-end pb-32 text-center px-6">
