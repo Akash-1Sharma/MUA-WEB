@@ -42,56 +42,60 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden"
+      className="relative w-full overflow-hidden"
+      style={{ height: '100vh', minHeight: '100vh' }}
       data-testid="hero-section"
-      style={{
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1f2d 50%, #1a1a1a 100%)'
-      }}
     >
-      {/* Decorative Background Pattern while video loads */}
-      {!videoLoaded && (
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url('https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/txuguayx_Pink%20leopard%20texture%20background.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'grayscale(50%)'
-          }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-        </div>
-      )}
+      {/* Video Container - Absolute Full Coverage */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
+        {/* Decorative Background Pattern while video loads */}
+        {!videoLoaded && (
+          <>
+            <div 
+              className="absolute inset-0 opacity-40"
+              style={{
+                backgroundImage: `url('https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/txuguayx_Pink%20leopard%20texture%20background.jpeg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'grayscale(30%)'
+              }} 
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+            
+            {/* Loading Indicator */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+              <div className="w-16 h-16 border-2 border-pink border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+              <p className="text-white/70 text-sm tracking-widest uppercase">Loading Video</p>
+            </div>
+          </>
+        )}
 
-      {/* Loading Indicator */}
-      {!videoLoaded && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-          <div className="w-16 h-16 border-2 border-pink border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/70 text-sm tracking-widest uppercase">Loading Video</p>
-        </div>
-      )}
-
-      {/* Video Background - Full Cover */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{ 
-          minWidth: '100vw',
-          minHeight: '100vh',
-        }}
-        data-testid="hero-video"
-      >
-        <source
-          src="https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/kna3dsec_Palak%20Intro%2002.mp4"
-          type="video/mp4"
-        />
-      </video>
+        {/* Video - Full Screen Coverage */}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className={`absolute inset-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ 
+            width: '100vw',
+            height: '100vh',
+            objectFit: 'cover',
+            objectPosition: 'center center',
+          }}
+          data-testid="hero-video"
+        >
+          <source
+            src="https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/kna3dsec_Palak%20Intro%2002.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
 
       {/* Subtle Overlay for button visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none z-[1]" />
 
       {/* Sound Toggle Button */}
       <motion.button
@@ -106,7 +110,7 @@ const Hero = () => {
       </motion.button>
 
       {/* Content - Only Buttons */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-end pb-32 text-center px-6">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-end pb-32 text-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
