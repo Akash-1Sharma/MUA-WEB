@@ -5,13 +5,23 @@ import { ChevronDown, Volume2, VolumeX } from "lucide-react";
 const Hero = () => {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.play().catch(err => {
-        console.log("Autoplay blocked");
-      });
+      const handleCanPlay = () => {
+        setVideoLoaded(true);
+        video.play().catch(err => console.log("Autoplay blocked"));
+      };
+      
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('loadeddata', handleCanPlay);
+      
+      return () => {
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('loadeddata', handleCanPlay);
+      };
     }
   }, []);
 
@@ -34,7 +44,31 @@ const Hero = () => {
       id="home"
       className="relative h-screen w-full overflow-hidden"
       data-testid="hero-section"
+      style={{
+        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1f2d 50%, #1a1a1a 100%)'
+      }}
     >
+      {/* Decorative Background Pattern while video loads */}
+      {!videoLoaded && (
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url('https://customer-assets.emergentagent.com/job_luxury-artistry/artifacts/txuguayx_Pink%20leopard%20texture%20background.jpeg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'grayscale(50%)'
+          }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </div>
+      )}
+
+      {/* Loading Indicator */}
+      {!videoLoaded && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+          <div className="w-16 h-16 border-2 border-pink border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-white/70 text-sm tracking-widest uppercase">Loading Video</p>
+        </div>
+      )}
+
       {/* Video Background - Full Cover */}
       <video
         ref={videoRef}
@@ -43,11 +77,10 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ 
-          width: '177.77777778vh', /* 16:9 ratio */
-          minWidth: '100%',
-          minHeight: '100%',
+          minWidth: '100vw',
+          minHeight: '100vh',
         }}
         data-testid="hero-video"
       >
@@ -58,7 +91,7 @@ const Hero = () => {
       </video>
 
       {/* Subtle Overlay for button visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60 pointer-events-none" />
 
       {/* Sound Toggle Button */}
       <motion.button
