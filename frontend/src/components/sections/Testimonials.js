@@ -78,9 +78,11 @@ const Testimonials = () => {
     setIsSubmitting(true);
     try {
       await axios.post(`${API}/testimonials`, formData);
-      toast.success("Thank you for your review! It will be displayed after approval.");
+      toast.success("Thank you for your review! It has been added to the page.");
       setFormData({ client_name: "", rating: 5, review: "", event_type: "" });
       setShowForm(false);
+      // Refresh testimonials to show new review
+      fetchTestimonials();
     } catch (error) {
       toast.error("Failed to submit review. Please try again.");
     } finally {
