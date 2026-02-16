@@ -84,7 +84,8 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 w-full h-full object-cover scale-105 transition-opacity duration-1000 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
+        style={{ minHeight: '100vh', minWidth: '100vw' }}
         data-testid="hero-video"
       >
         <source

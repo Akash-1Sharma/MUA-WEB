@@ -56,7 +56,6 @@ class Testimonial(BaseModel):
     rating: int = Field(ge=1, le=5)
     review: str
     event_type: Optional[str] = ""
-    approved: bool = False
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class TestimonialCreate(BaseModel):
@@ -113,7 +112,8 @@ async def get_testimonials():
 
 @api_router.get("/testimonials/approved", response_model=List[Testimonial])
 async def get_approved_testimonials():
-    testimonials = await db.testimonials.find({"approved": True}, {"_id": 0}).to_list(1000)
+    # Return all testimonials without approval filter
+    testimonials = await db.testimonials.find({}, {"_id": 0}).to_list(1000)
     for testimonial in testimonials:
         if isinstance(testimonial.get('created_at'), str):
             testimonial['created_at'] = datetime.fromisoformat(testimonial['created_at'])
