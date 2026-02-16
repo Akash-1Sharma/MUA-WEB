@@ -1,50 +1,17 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown, Volume2, VolumeX, Play } from "lucide-react";
+import { ChevronDown, Volume2, VolumeX } from "lucide-react";
 
 const Hero = () => {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [loadProgress, setLoadProgress] = useState(0);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Listen for progress events
-      const handleProgress = () => {
-        if (video.buffered.length > 0) {
-          const bufferedEnd = video.buffered.end(video.buffered.length - 1);
-          const duration = video.duration;
-          if (duration > 0) {
-            setLoadProgress(Math.round((bufferedEnd / duration) * 100));
-          }
-        }
-      };
-
-      const handleCanPlay = () => {
-        setIsLoaded(true);
-        video.play().then(() => {
-          setIsPlaying(true);
-        }).catch(err => {
-          console.log("Autoplay blocked");
-        });
-      };
-
-      const handlePlaying = () => {
-        setIsPlaying(true);
-      };
-
-      video.addEventListener('progress', handleProgress);
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('playing', handlePlaying);
-
-      return () => {
-        video.removeEventListener('progress', handleProgress);
-        video.removeEventListener('canplay', handleCanPlay);
-        video.removeEventListener('playing', handlePlaying);
-      };
+      video.play().catch(err => {
+        console.log("Autoplay blocked");
+      });
     }
   }, []);
 
@@ -52,14 +19,6 @@ const Hero = () => {
     if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
-    }
-  };
-
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch(err => console.log(err));
     }
   };
 
@@ -73,10 +32,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="relative h-screen w-full overflow-hidden"
       data-testid="hero-section"
     >
-      {/* Video Background */}
+      {/* Video Background - Full Cover */}
       <video
         ref={videoRef}
         autoPlay
@@ -84,8 +43,12 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className={`absolute inset-0 w-full h-full object-cover scale-105 transition-opacity duration-1000 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}
-        style={{ minHeight: '100vh', minWidth: '100vw' }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover"
+        style={{ 
+          width: '177.77777778vh', /* 16:9 ratio */
+          minWidth: '100%',
+          minHeight: '100%',
+        }}
         data-testid="hero-video"
       >
         <source
@@ -94,58 +57,28 @@ const Hero = () => {
         />
       </video>
 
-      {/* Loading State */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black z-10">
-          <div className="relative w-20 h-20 mb-6">
-            <div className="absolute inset-0 border-2 border-pink/20 rounded-full" />
-            <div 
-              className="absolute inset-0 border-2 border-pink border-t-transparent rounded-full animate-spin"
-              style={{ animationDuration: '1s' }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-pink text-sm font-medium">{loadProgress}%</span>
-            </div>
-          </div>
-          <p className="text-white/60 text-sm tracking-widest uppercase">Loading Video...</p>
-          <p className="text-white/40 text-xs mt-2">Please wait, video is loading</p>
-          
-          {/* Manual Play Button */}
-          {isLoaded && !isPlaying && (
-            <button
-              onClick={handlePlayClick}
-              className="mt-6 flex items-center gap-2 px-6 py-3 bg-pink text-white text-xs tracking-widest uppercase hover:bg-pink-dark transition-colors"
-            >
-              <Play size={16} /> Play Video
-            </button>
-          )}
-        </div>
-      )}
-
       {/* Subtle Overlay for button visibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/50 pointer-events-none" />
 
       {/* Sound Toggle Button */}
-      {isPlaying && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          onClick={toggleMute}
-          className="absolute top-24 right-6 z-20 w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 text-white hover:bg-pink hover:border-pink transition-all"
-          data-testid="sound-toggle"
-        >
-          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-        </motion.button>
-      )}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        onClick={toggleMute}
+        className="absolute top-24 right-6 z-20 w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 text-white hover:bg-pink hover:border-pink transition-all"
+        data-testid="sound-toggle"
+      >
+        {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+      </motion.button>
 
       {/* Content - Only Buttons */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-end pb-32 text-center px-6 pointer-events-none">
+      <div className="relative z-10 h-full flex flex-col items-center justify-end pb-32 text-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 pointer-events-auto"
+          className="flex flex-col sm:flex-row gap-4"
         >
           <button
             onClick={() => scrollToSection("#contact")}
